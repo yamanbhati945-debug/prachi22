@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Prachi 💜</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <h1>💜 A Surprise is Loading...</h1>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3">
+</audio>
+<div class="music-btn" onclick="toggleMusic()">🎵</div>
+
+<!-- HERO -->
+<section class="hero hidden">
+  <h1>Happy Birthday Prachi 🎂✨</h1>
+  <button onclick="startExperience()">Start 🎁</button>
+</section>
+
+<!-- CAKE -->
+<section class="cake hidden">
+  <h2>🎂 Make a Wish</h2>
+  <div class="cake-box" onclick="blowCandle()">
+    🕯️🕯️🕯️
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video hidden">
+  <h2>🎥 Special Video</h2>
+  <video controls>
+    <source src="video.mp4">
+  </video>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery hidden">
+  <h2>📸 Memories</h2>
+  <div class="grid">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+  </div>
+</section>
+
+<!-- CHAT -->
+<section class="chat hidden">
+  <h2>💬 Our Chat</h2>
+  <div id="chatBox"></div>
+</section>
+
+<!-- LETTER -->
+<section class="letter hidden">
+  <h2>💌 Letter</h2>
+  <p id="typing"></p>
+</section>
+
+<canvas id="confetti"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>

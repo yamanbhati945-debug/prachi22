@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f1a;
+  color: white;
+  text-align: center;
+}
+
+/* INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* CAKE */
+.cake-box {
+  font-size: 40px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+/* VIDEO */
+.video video {
+  width: 90%;
+  border-radius: 20px;
+}
+
+/* GALLERY */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* CHAT */
+#chatBox {
+  max-width: 350px;
+  margin: auto;
+}
+
+.msg {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.left { background: #1f1f2e; text-align: left; }
+.right { background: #25D366; color: black; text-align: right; }
+
+/* LETTER */
+.letter {
+  padding: 20px;
+}
+
+/* BUTTON */
+button {
+  padding: 12px 20px;
+  background: #ff4d6d;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
+/* MUSIC */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4d6d;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+/* HIDDEN */
+.hidden { display: none; }

@@ -1,0 +1,106 @@
+// INTRO
+setTimeout(() => {
+  document.getElementById("intro").style.display = "none";
+  document.querySelector(".hero").classList.remove("hidden");
+}, 2000);
+
+// MUSIC
+let music = document.getElementById("music");
+function toggleMusic(){
+  music.paused ? music.play() : music.pause();
+}
+
+// START
+function startExperience(){
+  document.querySelector(".hero").classList.add("hidden");
+  document.querySelector(".cake").classList.remove("hidden");
+  music.play();
+}
+
+// CAKE
+function blowCandle(){
+  document.querySelector(".cake").innerHTML = "<h2>🎉 Wish Granted!</h2>";
+  showAll();
+}
+
+// SHOW ALL
+function showAll(){
+  document.querySelector(".video").classList.remove("hidden");
+  document.querySelector(".gallery").classList.remove("hidden");
+  document.querySelector(".chat").classList.remove("hidden");
+  document.querySelector(".letter").classList.remove("hidden");
+  startChat();
+  typeWriter();
+  confetti();
+}
+
+// CHAT
+const chats = [
+  {t:"Hey Prachi 👋",c:"left"},
+  {t:"Hii 😊",c:"right"},
+  {t:"Happy Birthday 🎉🎂",c:"left"},
+  {t:"Thank you 💖",c:"right"},
+  {t:"Stay happy always 😄",c:"left"},
+  {t:"🥺💗",c:"right"}
+];
+
+function startChat(){
+  let box = document.getElementById("chatBox");
+  let i=0;
+  function add(){
+    if(i<chats.length){
+      let d=document.createElement("div");
+      d.className="msg "+chats[i].c;
+      d.innerText=chats[i].t;
+      box.appendChild(d);
+      i++;
+      setTimeout(add,800);
+    }
+  }
+  add();
+}
+
+// LETTER
+const text = `Hey, happy birthday ❤️🎂✨
+You are the most special person in my life...
+Always stay happy 😊❤️`;
+
+let i=0;
+function typeWriter(){
+  let el=document.getElementById("typing");
+  function type(){
+    if(i<text.length){
+      el.innerHTML+=text[i++];
+      setTimeout(type,20);
+    }
+  }
+  type();
+}
+
+// CONFETTI
+function confetti(){
+  let canvas=document.getElementById("confetti");
+  let ctx=canvas.getContext("2d");
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+
+  let p=[...Array(100)].map(()=>({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*4
+  }));
+
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    p.forEach(a=>{
+      ctx.beginPath();
+      ctx.arc(a.x,a.y,a.r,0,Math.PI*2);
+      ctx.fillStyle="white";
+      ctx.fill();
+      a.y+=2;
+      if(a.y>canvas.height)a.y=0;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
